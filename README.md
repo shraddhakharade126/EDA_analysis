@@ -1,6 +1,7 @@
 # EDA_analysis
 
 📁 File Name: EDA_Pra.ipynb
+
 🧾 Objective:
       Perform Exploratory Data Analysis (EDA) on a dataset with both numerical and categorical variables. Use visualizations and summary statistics to understand the distribution, relationships, and possible data issues.
 
