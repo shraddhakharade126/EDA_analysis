@@ -1,1 +1,71 @@
 # EDA_analysis
+
+📁 File Name: EDA_Pra.ipynb
+🧾 Objective:
+Perform Exploratory Data Analysis (EDA) on a dataset with both numerical and categorical variables. Use visualizations and summary statistics to understand the distribution, relationships, and possible data issues.
+
+🪜 Steps Performed in the Notebook
+1. Importing Required Libraries
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+📌 These are the core libraries for:
+
+Data manipulation (pandas)
+
+Data visualization (seaborn and matplotlib)
+
+2. Loading the Dataset
+
+df = pd.read_csv("data.csv")
+📌 Loads the dataset into a DataFrame df from the file data.csv.
+
+3. Initial Data Inspection
+
+df.head()
+df.info()
+df.describe()
+📌 Gives an overview of:
+
+First 5 rows
+
+Data types and missing values
+
+Summary statistics for numeric columns
+
+4. Missing Value Detection
+
+df.isnull().sum()
+📌 Shows the count of missing values in each column.
+
+5. Data Cleaning (if applicable)
+
+Example:
+df['Price'].fillna(df.groupby('Product')['Price'].transform('mean'), inplace=True)
+📌 Fills missing prices based on product type (e.g., Laptop, Desktop, Tablet).
+
+6. Univariate Analysis
+
+🔹 Numerical Columns
+sns.histplot(df['Price'], kde=True)
+plt.show()
+📌 Shows distribution of Price.
+
+🔹 Categorical Columns
+sns.countplot(x='Product', data=df)
+plt.show()
+📌 Shows count of each product type.
+
+7. Bivariate Analysis
+
+🔹 Categorical vs Numerical
+sns.boxplot(x='Product', y='Price', data=df)
+plt.show()
+📌 Compares price distribution across products.
+
+🔹 Correlation Matrix
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.show()
+📌 Visualizes correlation between numerical columns.
+
