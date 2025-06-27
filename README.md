@@ -26,7 +26,6 @@
           sns.histplot(df['Price'], kde=True)
           plt.show()
           📌 Shows distribution of Price.
-          
           🔹 Categorical Columns
           sns.countplot(x='Product', data=df)
           plt.show()
@@ -37,7 +36,6 @@
           sns.boxplot(x='Product', y='Price', data=df)
           plt.show()
           📌 Compares price distribution across products.
-          
           🔹 Correlation Matrix
           sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
           plt.show()
